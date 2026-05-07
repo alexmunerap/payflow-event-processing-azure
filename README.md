@@ -61,7 +61,6 @@ La nueva arquitectura debe cumplir con los siguientes requerimientos definidos p
 | Desacoplamiento | Notificaciones independientes del flujo principal | Evitar que fallos de webhook reviertan autorizaciones válidas |
 | Observabilidad | Alertas automáticas con latencia menor a 30 segundos | Detectar anomalías antes de que los comercios reporten |
 
-## 6. Arquitectura propuesta
 
 ## 6. Arquitectura propuesta
 
@@ -88,9 +87,52 @@ Azure Functions
 
 ## 7. Modelo C4
 
+El modelo C4 permite documentar la arquitectura de software en diferentes niveles de abstracción: contexto, contenedores y componentes. Para este caso se desarrollan los diagramas C1, C2 y C3.
+
 ### 7.1 C1 - Contexto
 
-Pendiente por agregar diagrama.
+El diagrama de contexto muestra a PayFlow como sistema principal y su relación con actores y sistemas externos.
+
+![C1 - Contexto](assets/c1-contexto.png)
+
+En este nivel se identifican los siguientes elementos:
+
+- Comercio afiliado
+- Sistema legado de PayFlow
+- PayFlow Event Processing
+- Adquirente bancario
+- Redes de pago
+- Webhook del comercio
+- Equipo de operaciones
+- Equipo de riesgo
+
+### 7.2 C2 - Contenedores
+
+El diagrama de contenedores muestra los servicios principales de Azure que componen la solución.
+
+![C2 - Contenedores](assets/c2-contenedores.png)
+
+Los contenedores principales son:
+
+- Azure Event Hubs
+- Azure Functions
+- Azure Service Bus
+- Azure Cosmos DB
+- Azure Monitor + Application Insights
+
+### 7.3 C3 - Componentes
+
+El diagrama de componentes muestra el interior del contenedor Azure Functions.
+
+![C3 - Componentes](assets/c3-componentes.png)
+
+Los componentes principales son:
+
+- validarTransaccion
+- evaluarFraude
+- enrutarPorMonto
+- registrarResultado
+- notificarComercio
 
 ### 7.2 C2 - Contenedores
 
