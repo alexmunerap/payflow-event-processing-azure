@@ -12,10 +12,11 @@
 
 ## 2. Integrantes
 
-- Integrante 1:
-- Integrante 2:
-- Integrante 3:
-- Integrante 4:
+- Integrante 1:Yean Kevin Marquez Alvarez
+- Integrante 2:Juan Camilo Arroyave Monsalve
+- Integrante 3:Yesid Mateo Hincapie Duque
+- Integrante 4:Diover Farley Sanchez Salazar
+- Integrante 5:Jhon Alexander Múnera Peláe
 
 ## 3. Contexto del caso
 
