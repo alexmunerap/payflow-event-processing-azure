@@ -63,11 +63,14 @@ La nueva arquitectura debe cumplir con los siguientes requerimientos definidos p
 
 ## 6. Arquitectura propuesta
 
+## 6. Arquitectura propuesta
+
 La arquitectura propuesta para PayFlow está basada en eventos. El objetivo es desacoplar la entrada de transacciones, el procesamiento, la priorización de transacciones de alto valor, la persistencia del estado y la observabilidad.
 
 ### 6.1 Flujo general
 
-```txt
+La arquitectura propuesta para PayFlow está basada en eventos. El objetivo es desacoplar la entrada de transacciones, el procesamiento, la priorización de transacciones de alto valor, la persistencia del estado y la observabilidad.
+
 Sistema legado / Canales digitales
         |
         v
@@ -81,6 +84,7 @@ Azure Functions
         +--> Azure Cosmos DB
         |
         +--> Azure Monitor + Application Insights
+
 
 ## 7. Modelo C4
 
