@@ -21,9 +21,30 @@
 
 PayFlow es una fintech colombiana que procesa pagos digitales para pequeños y medianos comercios. Actualmente opera con una arquitectura monolítica y síncrona, lo que genera problemas de escalabilidad, acoplamiento, observabilidad limitada y detección tardía de fraude.
 
+
 ## 4. Problemas identificados
 
-Pendiente por documentar.
+PayFlow tiene actualmente una arquitectura monolítica y síncrona construida en 2020. Cada transacción pasa por un flujo secuencial de validación, autorización, registro y notificación. Esta forma de procesamiento genera varios problemas críticos.
+
+### 4.1 Cuello de botella en picos de demanda
+
+El sistema actual procesa aproximadamente 40 transacciones por segundo. En temporada alta, el volumen de transacciones puede superar esta capacidad, generando acumulación de solicitudes, tiempos de respuesta superiores a 8 segundos y posibles rechazos en terminales de los comercios.
+
+### 4.2 Falta de prioridad entre transacciones
+
+Una transacción de bajo valor y una transacción de alto valor pasan por el mismo flujo y con la misma prioridad. Esto puede ocasionar que un alto volumen de micropagos bloquee transacciones de mayor importancia económica.
+
+### 4.3 Detección de fraude reactiva
+
+El sistema actual aplica reglas antifraude después de autorizar la transacción. Esto significa que, cuando se detecta una operación sospechosa, el dinero ya pudo quedar comprometido.
+
+### 4.4 Observabilidad limitada
+
+No existe un monitoreo centralizado del flujo de transacciones. El equipo de operaciones puede enterarse de fallos por quejas de los comercios, en lugar de recibir alertas automáticas.
+
+### 4.5 Acoplamiento entre autorización y notificación
+
+Si el servicio de notificación al comercio falla, la transacción completa puede verse afectada, aunque la autorización bancaria haya sido exitosa. Esto genera inconsistencias entre PayFlow y las redes de pago.
 
 ## 5. Requerimientos no funcionales
 
