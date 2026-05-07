@@ -46,9 +46,19 @@ No existe un monitoreo centralizado del flujo de transacciones. El equipo de ope
 
 Si el servicio de notificación al comercio falla, la transacción completa puede verse afectada, aunque la autorización bancaria haya sido exitosa. Esto genera inconsistencias entre PayFlow y las redes de pago.
 
+
 ## 5. Requerimientos no funcionales
 
-Pendiente por documentar.
+La nueva arquitectura debe cumplir con los siguientes requerimientos definidos para PayFlow:
+
+| Requerimiento | Métrica objetivo | Motivación |
+|---|---|---|
+| Throughput | Procesar hasta 500 transacciones por segundo | Soportar picos de temporada alta sin degradación |
+| Latencia de autorización | Menos de 2 segundos en P99 | Evitar timeouts en terminales de comercios |
+| Garantía de entrega | At-least-once para transacciones críticas | Ninguna transacción crítica debe perderse |
+| Detección de fraude | Evaluación en tiempo real antes de autorizar | Reducir fraude antes de comprometer dinero |
+| Desacoplamiento | Notificaciones independientes del flujo principal | Evitar que fallos de webhook reviertan autorizaciones válidas |
+| Observabilidad | Alertas automáticas con latencia menor a 30 segundos | Detectar anomalías antes de que los comercios reporten |
 
 ## 6. Arquitectura propuesta
 
