@@ -138,7 +138,7 @@ Los componentes principales son:
 
 ## 8. Decisiones arquitectónicas
 
-Pendiente por documentar.
+Pendiente por documentar..
 
 ## 9. Implementación del flujo crítico
 
