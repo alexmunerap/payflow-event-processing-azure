@@ -134,13 +134,7 @@ Los componentes principales son:
 - registrarResultado
 - notificarComercio
 
-### 7.2 C2 - Contenedores
 
-Pendiente por agregar diagrama.
-
-### 7.3 C3 - Componentes
-
-Pendiente por agregar diagrama.
 
 ## 8. Decisiones arquitectónicas
 
