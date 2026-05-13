@@ -138,7 +138,29 @@ Los componentes principales son:
 
 ## 8. Decisiones arquitectónicas
 
-Pendiente por documentar..
+PayFlow integra servicios de Azure para procesar pagos masivos en tiempo real, transformando picos de tráfico en datos seguros y validados. Es una infraestructura orientada a eventos que garantiza latencia mínima, escalabilidad automática y un control total sobre transacciones críticas.
+
+[ADRs](assets/ADRs.pdf)
+
+### 8.1 (Event Hubs):
+
+Ingesta masiva de datos capaz de soportar picos de 500 transacciones por segundo sin pérdida de información.
+
+### 8.2 ADR-02 (Azure Functions)
+
+Procesamiento serverless escalable en Python para ejecutar la lógica de validación y detección de fraude.
+
+### 8.3 ADR-03 (Cosmos DB)
+
+Almacenamiento NoSQL de baja latencia para persistir el historial de transacciones con respuesta inmediata.
+
+### 8.4 ADR-04 (Service Bus)
+
+Gestión de mensajería prioritaria y segura para procesar transacciones críticas superiores a $5.000.000 COP.
+
+### 8.5 ADR-05 (App Insights):
+
+Monitoreo centralizado y rastreo distribuido para detectar errores y cuellos de botella en tiempo real.
 
 ## 9. Implementación del flujo crítico
 
