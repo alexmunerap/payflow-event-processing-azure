@@ -84,7 +84,6 @@ Azure Functions
         |
         +--> Azure Monitor + Application Insights
 
-
 ## 7. Modelo C4
 
 El modelo C4 permite documentar la arquitectura de software en diferentes niveles de abstracción: contexto, contenedores y componentes. Para este caso se desarrollan los diagramas C1, C2 y C3.
@@ -117,7 +116,7 @@ Los contenedores principales son:
 - Azure Event Hubs
 - Azure Functions
 - Azure Service Bus
-- Azure Cosmos DB
+- Azure SQL Database
 - Azure Monitor + Application Insights
 
 ### 7.3 C3 - Componentes
@@ -133,7 +132,6 @@ Los componentes principales son:
 - enrutarPorMonto
 - registrarResultado
 - notificarComercio
-
 
 
 ## 8. Decisiones arquitectónicas
@@ -162,6 +160,8 @@ Gestión de mensajería prioritaria y segura para procesar transacciones crític
 
 Monitoreo centralizado y rastreo distribuido para detectar errores y cuellos de botella en tiempo real.
 
+### 8.6 Documentación de Servicios:
+[DocServices](assets/Documentacion_Infraestructura_PayFlow.pdf)
 ## 9. Implementación del flujo crítico
 
 Pendiente por documentar.
