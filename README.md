@@ -196,7 +196,7 @@ Ingesta masiva de datos capaz de soportar picos de 500 transacciones por segundo
 
 Procesamiento serverless escalable en Python para ejecutar la lógica de validación y detección de fraude.
 
-### 8.3 ADR-03 (Cosmos DB)
+### 8.3 ADR-03 (Azure SQL Database)
 
 Almacenamiento NoSQL de baja latencia para persistir el historial de transacciones con respuesta inmediata.
 
